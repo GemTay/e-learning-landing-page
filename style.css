@@ -41,27 +41,6 @@
   --lh-51: 51px;
   --lh-70: 70px;
 
-  --fs-body-s: var(--fs-100);
-  --fs-body-m: var(--fs-200);
-  --fs-heading-s: var(--fs-400);
-  --fs-heading-m: var(--fs-600);
-  --fs-heading-l: var(--fs-800);
-  --fs-heading-xl: var(--fs-900);
-
-  --lh-body-s: var(--lh-28);
-  --lh-body-m: var(--lh-28);
-  --lh-heading-s: var(--lh-28);
-  --lh-heading-m: var(--lh-40);
-  --lh-heading-l: var(--lh-51);
-  --lh-heading-xl: var(--lh-70);
-
-  --fw-body-s: var(--fw-bold);
-  --fw-body-m: var(--fw-medium);
-  --fw-heading-s: var(--fw-x-bold);
-  --fw-heading-m: var(--fw-x-bold);
-  --fw-heading-l: var(--fw-x-bold);
-  --fw-heading-xl: var(--fw-x-bold);
-
   --size-200: 0.5rem;
   --size-300: 0.75rem;
   --size-400: 1rem;
@@ -175,6 +154,8 @@ main {
 /* header */
 
 .primary-header {
+  position: relative;
+  z-index: 20;
   padding-block: var(--size-400);
   margin-bottom: var(--size-650);
 }
@@ -187,16 +168,16 @@ main {
 }
 
 .hero h1 {
-  font-size: var(--fs-heading-l);
+  font-size: var(--fs-800);
   font-weight: var(--fw-x-bold);
   line-height: var(--lh-51);
   margin-bottom: var(--size-600);
 }
 
 .hero p {
-  font-size: var(--fs-body-m);
+  font-size: var(--fs-200);
   font-weight: var(--fw-medium);
-  line-height: var(--lh-28);
+  line-height: var(--lh-26);
   color: var(--clr-neutral-200);
   margin-bottom: var(--size-550);
 }
@@ -216,7 +197,7 @@ main {
   align-items: center;
 }
 
-/* button */
+/* buttons */
 
 .button {
   color: var(--clr-neutral-100);
@@ -281,7 +262,7 @@ main {
 
 .courses--card > h2 {
   color: var(--clr-neutral-100);
-  font-size: var(--fs-heading-s);
+  font-size: var(--fs-400);
   font-weight: var(--fw-x-bold);
 }
 
@@ -291,7 +272,7 @@ main {
 }
 
 .courses--card > p {
-  font-size: var(--fs-body-s);
+  font-size: var(--fs-100);
   font-weight: var(--fw-medium);
   line-height: var(--lh-26);
   color: var(--clr-neutral-200);
@@ -309,6 +290,10 @@ main {
 .courses--card:first-child {
   background: var(--clr-grad-primary);
   padding: var(--size-500);
+}
+
+.courses--card:first-child > h2 {
+  max-width: 15ch;
 }
 
 /* footer */
@@ -336,17 +321,19 @@ main {
 
   .hero--flex {
     flex-direction: row;
+    position: relative;
   }
 
   .hero--text {
-    width: 420px;
+    max-width: 420px;
   }
 
   .hero-img-tablet {
     display: block;
     position: absolute;
-    top: -90px;
-    right: -300px;
+    z-index: 10;
+    top: -250px;
+    right: -330px;
   }
 
   .hero-img-mobile,
@@ -360,7 +347,7 @@ main {
   }
 
   .courses--card:first-child {
-    padding: var(--size-750) var(--size-600); 
+    padding: var(--size-750) var(--size-600);
   }
 }
 
@@ -370,33 +357,39 @@ main {
   }
 
   .hero h1 {
-    font-size: var(--fs-heading-xl)
+    font-size: var(--fs-900);
+  }
+
+  .hero--text {
+    max-width: 460px;
   }
 
   .hero-img-tablet {
-    top: -86px;
-    right: -250px;
+    top: -250px;
+    right: -330px;
   }
 }
 
 @media (min-width: 1440px) {
   .container {
     padding-inline: 0;
+    margin-inline: auto;
+    max-width: 1110px;
   }
 
   .primary-header {
-    margin-bottom: var(--size-900);
+    margin-bottom: 10rem;
   }
 
-  .hero--text {
-    max-width: 430px;
+  .hero {
+    margin-bottom: 18rem;
   }
 
   .hero-img-desktop {
     display: block;
     position: absolute;
-    top: -150px;
-    right: -340px;
+    top: -400px;
+    right: -490px;
   }
 
   .hero-img-mobile,
@@ -409,16 +402,16 @@ main {
   }
 
   .courses--card > h2 {
-    font-size: var(--fs-heading-m);
+    font-size: var(--fs-600);
   }
 
   .courses--card > h3 {
-    font-size: var(--fs-heading-s);
+    font-size: var(--fs-400);
   }
 
   .courses--card > p,
   .courses--card > a {
-    font-size: var(--fs-body-m);
+    font-size: var(--fs-200);
     line-height: var(--lh-28);
   }
 
