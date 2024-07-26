@@ -238,8 +238,9 @@ main {
 
 .courses--container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--size-650);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: clamp(var(--size-650), 7vw, var(--size-900));
+  column-gap: var(--size-300);
 }
 
 .courses--card {
@@ -341,11 +342,6 @@ main {
     display: none;
   }
 
-  .courses--container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--size-750) var(--size-300);
-  }
-
   .courses--card:first-child {
     padding: var(--size-750) var(--size-600);
   }
@@ -375,6 +371,10 @@ main {
     padding-inline: 0;
     margin-inline: auto;
     max-width: 1110px;
+  }
+
+  .courses--container {
+    column-gap: var(--size-550);
   }
 
   .primary-header {
@@ -413,11 +413,6 @@ main {
   .courses--card > a {
     font-size: var(--fs-200);
     line-height: var(--lh-28);
-  }
-
-  .courses--container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--size-900) var(--size-550);
   }
 
   .button {
